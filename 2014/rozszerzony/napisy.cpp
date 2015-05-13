@@ -43,12 +43,12 @@ int main () {
 	dane.open("NAPIS.TXT"); // otwieramy plik z danymi
 	odpowiedz.open("ZADANIE5R.TXT"); // otwieramy plik wyjsciowy
 	for (int i = 0; i < 1000; ++i) {
-		getline(dane,a);
-		a.erase(a.find_last_not_of(" \n\r")+1); // kasujemy znaki z konca
+		dane >> a;
 		podpunkta += sprawdzA(a);
 		podpunktb += sprawdzB(a);
 		lista[i] = a;
 		// podpunkt c
+		wystapienia[i] = 0;
 		for (int k = 0; k <= i; ++k) {
 			if (lista[i] == lista[k]) {
 				++wystapienia[k];

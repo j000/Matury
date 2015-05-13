@@ -1,5 +1,3 @@
-// zla odpowiedz w B
-// 585, w odpowiedziach 584
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -11,7 +9,7 @@ int sprawdzA (int x, int y) {
 }
 
 int sprawdzB (int x, int y) {
-	for (int k = 2; k < x && k < y; ++k) { // 1 < k < (x,y)
+	for (int k = 2; k <= x && k <= y; ++k) { // 1 < k <= (x,y)
 		if (x % k == 0 && y % k == 0) { // jezeli k jest wspolnym dzielnikiem
 			return 0; // konczymy szukac
 		}
