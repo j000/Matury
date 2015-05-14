@@ -1,0 +1,2 @@
+parzyste: 105
+nieparzyste: 95
