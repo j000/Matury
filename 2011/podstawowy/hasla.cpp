@@ -4,7 +4,12 @@
 using namespace std;
 
 bool czy_palindrom (string x) {
-	return false;
+	int dlugosc = x.size() - 1; // -1, bo bedziemy uzywac w tablicy
+	for (int i = 0; i < x.size()/2; ++i) { // przez pol wyrazu
+		if (x[i] != x[dlugosc-i]) // jesli nie ma takiej samej litery na koncu slowa
+			return false; // to nie jest palindromem
+	}
+	return true; // jesli petla doszla do konca, to jest palindrom
 }
 
 bool podpunktC (string x) {
