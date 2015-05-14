@@ -1,6 +1,6 @@
-# dodamy tylko potrzebne pliki
-*
-!.gitignore
+# wszystko wewnatrz matur
+/20*/*/*
+
 # kody
 !*.cpp
 # zadania
