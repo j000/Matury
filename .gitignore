@@ -1,2 +1,13 @@
-/*/*/*
-!/*/*/*.*
+# dodamy tylko potrzebne pliki
+*
+!.gitignore
+# kody
+!*.cpp
+# zadania
+!*.pdf
+# dane
+!Dane_PP.rar
+!Dane_PR.rar
+# i rozpakowane
+!*.txt
+!*.TXT
