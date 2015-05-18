@@ -1,0 +1,5 @@
+A: 447
+B: 324
+C: 49
+najmniejsza: 20 (24)
+najwieksza: 308975 (1133357)
