@@ -25,9 +25,9 @@ string sprawdzB (string x) {
 		if (x[k-1] >= x[k]) // jesli nie jest rosnacy
 			return ""; // nie sprawdzamy dalej
 	}
-	return '\n' + x;
-	// dla windowsa chyba tak trzeba:
-	// return "\r\n" + x
+	return "\r\n" + x
+	// wersja dla linuxa:
+	//return "\n" + x;
 }
 
 int main () {
