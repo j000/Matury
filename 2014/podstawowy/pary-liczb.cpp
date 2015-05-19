@@ -28,7 +28,7 @@ int sprawdzC (int x, int y) {
 	int sumax = 0, sumay = 0;
 	sumax = suma(x);
 	sumay = suma(y);
-	if (sumax == sumay) // jesli sumy  sa takie same
+	if (sumax == sumay) // jesli sumy sa takie same
 		return 1; // to dobrze
 	return 0;
 }
