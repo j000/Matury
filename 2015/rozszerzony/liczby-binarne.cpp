@@ -3,36 +3,41 @@
 using namespace std;
 
 int sprawdzA (string x) {
+	// zakladamy, ze zadna liczba nie zaczyna sie zerami, np. "000010"
 	int zera = 0, jedynki = 0;
+	// proste zliczanie wystarczy
 	for (int i = 0; i < x.size(); ++i) {
 		if (x[i] == '0')
 			++zera;
 		else if (x[i] == '1')
 			++jedynki;
 	}
-	if (zera > jedynki)
-		return 1;
+	if (zera > jedynki) // jesli ma wiecej zer niz jedynek
+		return 1; // to zliczamy
 	return 0;
 }
 
 void sprawdzB (string x, int& podzielne2, int& podzielne8) {
 	int dlugosc = x.size();
 	if (dlugosc >= 2 // odpowiednia dlugosc
-			&& x[dlugosc-1] == '0') // i ostatnia cyfra to 0
+			&& x[dlugosc-1] == '0') // i ostatnia cyfra to 0 (binarnie 2 to 10)
 		++podzielne2;
 	if (dlugosc >= 4 // odpowiednia dlugosc 
 			&& x[dlugosc-1] == '0'
 			&& x[dlugosc-2] == '0'
-			&& x[dlugosc-3] == '0') // i ostatnie 3 cyfry to 000
+			&& x[dlugosc-3] == '0') // i ostatnie 3 cyfry to 000 (binarnie 8 to 1000)
 		++podzielne8;
 }
 
 void sprawdzC (string x, int wiersz, string& min_liczba, int& min_wiersz, string& max_liczba, int& max_wiersz) {
+	// proste porownanie wystarczy
+	// "100" > "10"
+	// "101" > "100"
+	// "10" < "101"
 	if (x < min_liczba) {
 		min_liczba = x;
 		min_wiersz = wiersz;
-	}
-	if (x > max_liczba) {
+	} else if (x > max_liczba) {
 		max_liczba = x;
 		max_wiersz = wiersz;
 	}
@@ -43,7 +48,7 @@ int main () {
 	ofstream odpowiedz;
 	int podpunkta = 0, podpunktb1 = 0, podpunktb2 = 0;
 	int min_wiersz = 0, max_wiersz = 0;
-	string min_liczba = "1000000000000", max_liczba = "1"; //ustawiamy na wieksza/mniejsza niz jedna z pierwszych liczb w danych
+	string min_liczba = "1000000000000", max_liczba = "1"; //ustawiamy na wieksza/mniejsza niz jedna z pierwszych liczb w danych (wiemy jakie sa dane, sprawdzamy)
 	string a;
 	//////////
 	dane.open("liczby.txt"); // otwieramy plik z danymi
