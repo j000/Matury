@@ -29,16 +29,16 @@ void sprawdzB (string x, int& podzielne2, int& podzielne8) {
 		++podzielne8;
 }
 
-void sprawdzC (string x, int wiersz, string& min_liczba, int& min_wiersz, string& max_liczba, int& max_wiersz) {
+void sprawdzC (string liczba, int wiersz, string& min_liczba, int& min_wiersz, string& max_liczba, int& max_wiersz) {
 	// proste porownanie wystarczy
 	// "100" > "10"
 	// "101" > "100"
 	// "10" < "101"
-	if (x < min_liczba) {
-		min_liczba = x;
+	if (liczba < min_liczba) {
+		min_liczba = liczba;
 		min_wiersz = wiersz;
-	} else if (x > max_liczba) {
-		max_liczba = x;
+	} else if (liczba > max_liczba) {
+		max_liczba = liczba;
 		max_wiersz = wiersz;
 	}
 }
@@ -46,9 +46,9 @@ void sprawdzC (string x, int wiersz, string& min_liczba, int& min_wiersz, string
 int main () {
 	ifstream dane;
 	ofstream odpowiedz;
-	int podpunkta = 0, podpunktb1 = 0, podpunktb2 = 0;
-	int min_wiersz = 0, max_wiersz = 0;
-	string min_liczba = "1000000000000", max_liczba = "1"; //ustawiamy na wieksza/mniejsza niz jedna z pierwszych liczb w danych (wiemy jakie sa dane, sprawdzamy)
+	int podpunkta = 0, podpunktb2 = 0, podpunktb8 = 0;
+	int wiersz_min = 0, wiersz_max = 0;
+	string liczba_min = "1000000000000", liczba_max = "1"; //ustawiamy na wieksza/mniejsza niz jedna z pierwszych liczb w danych (wiemy jakie sa dane, sprawdzamy)
 	string a;
 	//////////
 	dane.open("liczby.txt"); // otwieramy plik z danymi
@@ -56,13 +56,13 @@ int main () {
 	for (int i = 0; i < 1000; ++i) {
 		dane >> a;
 		podpunkta += sprawdzA(a);
-		sprawdzB(a, podpunktb1, podpunktb2);
-		sprawdzC(a, i, min_liczba, min_wiersz, max_liczba, max_wiersz); 
+		sprawdzB(a, podpunktb2, podpunktb8);
+		sprawdzC(a, i, liczba_min, wiersz_min, liczba_max, wiersz_max); 
 	}
 	// wypisujemy odpowiedzi
 	odpowiedz << "A: " << podpunkta << endl;
-	odpowiedz << "B: podzielne przez 2: " << podpunktb1 << " podzielne przez 8: " << podpunktb2 << endl;
-	odpowiedz << "C: najwieksza: " << max_wiersz << " najmniejsza: " << min_wiersz << endl;
+	odpowiedz << "B: podzielne przez 2: " << podpunktb2 << " podzielne przez 8: " << podpunktb8 << endl;
+	odpowiedz << "C: najwieksza: " << wiersz_max << " najmniejsza: " << wiersz_min << endl;
 	// zamykamy pliki
 	odpowiedz.close();
 	dane.close();
