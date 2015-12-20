@@ -1,0 +1,3 @@
+A: parzyste: 497
+B: najwieksza: 1111101111110110 (64502)
+C: suma 9-cyfrowych: 1001100111110111
