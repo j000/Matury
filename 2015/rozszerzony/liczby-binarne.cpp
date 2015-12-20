@@ -30,14 +30,17 @@ void sprawdzB (string x, int& podzielne2, int& podzielne8) {
 }
 
 void sprawdzC (string liczba, int wiersz, string& min_liczba, int& min_wiersz, string& max_liczba, int& max_wiersz) {
-	// proste porownanie wystarczy
+	// proste porownanie NIE wystarczy
 	// "100" > "10"
 	// "101" > "100"
 	// "10" < "101"
-	if (liczba < min_liczba) {
+	// ale "11" > "101"
+	//if (liczba < min_liczba) {
+	if (liczba.length() < min_liczba.length() || (liczba.length() == min_liczba.length() && liczba < min_liczba)) {
 		min_liczba = liczba;
 		min_wiersz = wiersz;
-	} else if (liczba > max_liczba) {
+	//} else if (liczba > max_liczba) {
+	} else if (liczba.length() > max_liczba.length() || (liczba.length() == max_liczba.length() && liczba > max_liczba)) {
 		max_liczba = liczba;
 		max_wiersz = wiersz;
 	}
