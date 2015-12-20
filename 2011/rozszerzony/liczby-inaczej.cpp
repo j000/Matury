@@ -24,11 +24,22 @@ void sprawdzB (string x, string& max) {
 	}
 }
 
+int string_na_liczbe(string x) {
+	int wynik = 0;
+	for (int i = 0; i < x.length(); ++i) {
+		wynik *= 2;
+		if (x[i] == '1')
+			wynik += 1;
+	}
+	return wynik;
+}
+
 unsigned int sprawdzC (string x) {
 	// 9-znakowe, mamy podac sume
 	// zwracamy 0, albo liczbe
 	// w petli sobie zsumujemy
 	if (x.length() == 9) {
+		return string_na_liczbe(x);
 		// albo wlasna funkcja jak nie pamietamy o STRing_TO_Long z <cstdlib>
 		return strtol(x.c_str(), NULL, 2); // NULL bo nie uzywamy, 2 bo binarny
 	}
