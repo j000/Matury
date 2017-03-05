@@ -1,15 +1,20 @@
-# wszystko wewnatrz matur
-/20*/*/*
-
+# wszystko
+*
+# poza podfolderami
+!*/
 # kody
 !*.cpp
 # zadania
 !*.pdf
-# dane
+# spakowane dane
 !Dane_PP.rar
 !Dane_PR.rar
 !Dane_PP2.rar
 !Dane_PR2.rar
-# i rozpakowane
+!Dane_PP.zip
+!Dane_PR.zip
+!Dane_PP2.zip
+!Dane_PR2.zip
+# dane/wyniki
 !*.txt
 !*.TXT
