@@ -76,7 +76,11 @@ int main() {
 	int nasza = 0;
 	unsigned char poprzedni = 0;
 	for (int y = 0; y < KOLUMNY; ++y) {
-		for (int x = 0; x < WIERSZE; ++x) {
+		if (nasza > najdluzsza)
+			najdluzsza = nasza;
+		poprzedni = obraz[0][y]; // zapamiętujemy
+		nasza = 1; // bo jesteśmy na pierwszym pikselu kolumny
+		for (int x = 1; x < WIERSZE; ++x) {
 			// kiedy taki sam to liczymy
 			if (obraz[x][y] == poprzedni) {
 				++nasza;
